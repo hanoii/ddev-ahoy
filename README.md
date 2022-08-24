@@ -4,4 +4,6 @@
 
 Adds [ahoy][ahoy] to your web container so you can run `ddev ahoy some:command`.
 
+Add it to your project by running `ddev get hanoii/ahoy` :rocket:
+
 [ahoy]: https://github.com/ahoy-cli
