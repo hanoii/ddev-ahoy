@@ -8,7 +8,7 @@ setup() {
   ddev delete -Oy ${PROJNAME} >/dev/null 2>&1 || true
   cd "${TESTDIR}"
   ddev config --project-name=${PROJNAME}
-  cp $DIR/tests/testdata/.ddev/* "${TESTDIR}"/.ddev
+  rsync -a $DIR/tests/testdata/.ddev/ "${TESTDIR}"/.ddev
   cp $DIR/tests/testdata/.ahoy.yml "${TESTDIR}"
   ddev start -y >/dev/null
 }
