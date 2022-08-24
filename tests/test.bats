@@ -8,7 +8,8 @@ setup() {
   ddev delete -Oy ${PROJNAME} >/dev/null 2>&1 || true
   cd "${TESTDIR}"
   ddev config --project-name=${PROJNAME}
-  cp -R $DIR/tests/.ddev/* "${TESTDIR}"/.ddev
+  cp $DIR/tests/testdata/.ddev/* "${TESTDIR}"/.ddev
+  cp $DIR/tests/testdata/.ahoy.yml "${TESTDIR}"
   ddev start -y >/dev/null
 }
 
@@ -27,6 +28,7 @@ teardown() {
   ddev restart
   # Do something here to verify functioning extra service
   ddev ahoy --version
+  ddev ahoy ddev:ahoy
 }
 
 @test "install from release" {
@@ -37,5 +39,6 @@ teardown() {
   ddev restart >/dev/null
   # Do something useful here that verifies the add-on
   ddev ahoy --version
+  ddev ahoy ddev:ahoy
 }
 

@@ -1,0 +1,8 @@
+ahoyapi: v2
+
+commands:
+
+  ddev:ahoy:
+    usage: 'Make this this command runs'
+    cmd: |
+      echo "Success!"
