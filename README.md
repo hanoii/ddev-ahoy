@@ -3,3 +3,5 @@
 ## What is ddev-ahoy?
 
 Adds [ahoy][ahoy] to your web container so you can run `ddev ahoy some:command`.
+
+[ahoy]: https://github.com/ahoy-cli
