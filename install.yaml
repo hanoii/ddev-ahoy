@@ -1,4 +1,16 @@
 name: ahoy
 project_files:
 - commands/web/ahoy
+- homeadditions/.bashrc.d/ahoy
+- homeadditions/.local/share/bash-completion/completions/ahoy
 - web-build/Dockerfile.ahoy
+- config.ahoy.yaml
+# DDEV environment variables can be interpolated into these actions
+post_install_actions:
+  - |
+    #ddev-description: Adding files to git bypassing default ignore
+    git add -f commands/web/ahoy
+    git add -f homeadditions/.bashrc.d/ahoy
+    git add -f homeadditions/.local/share/bash-completion/completions/ahoy
+    git add -f web-build/Dockerfile.ahoy
+    git add -f config.ahoy.yaml
